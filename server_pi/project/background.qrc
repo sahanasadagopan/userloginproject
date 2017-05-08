@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="path">
+    <file>project/Final background of ui.jpg</file>
+  </qresource>
+  <qresource prefix="path2">
+    <file>project/download.jpg</file>
+  </qresource>
+</RCC>

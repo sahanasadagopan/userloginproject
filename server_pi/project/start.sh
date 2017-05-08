@@ -18,5 +18,4 @@ fi
 
 # run pub/sub sample app using certificates downloaded in package
 printf "\nRuning pub/sub sample application...\n"
-
-python iot-mqtt-pub.py -e a3r2kfqjg515ls.iot.us-west-2.amazonaws.com -r root-CA.crt -c raspberry1.cert.pem -k raspberry1.private.key
+python aws-iot-device-sdk-python/samples/basicPubSub/basicPubSub.py -e a3r2kfqjg515ls.iot.us-west-2.amazonaws.com -r root-CA.crt -c finalProject.cert.pem -k finalProject.private.key

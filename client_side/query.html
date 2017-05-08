@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+
+<script>
+AWS.config.update({
+  region: "us-west-2",
+  // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+  accessKeyId: "AKIAJ6MEDSM3H2HP6NDA",
+  // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+  secretAccessKey: "HVgDjSiJrWmcKukI5HlbgW0sH/4kICYJsoTNZz95"
+});
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+function queryData() {
+    document.getElementById('textarea').innerHTML += "Querying for data.";
+
+    var params = {
+        TableName : "mytable",
+        KeyConditionExpression: "#key = :name",
+        ExpressionAttributeNames:{
+            "#key": "serialnumber"
+        },
+        ExpressionAttributeValues: {
+            ":name":"sahana"
+        }
+    };
+
+    docClient.query(params, function(err, data) {
+        if (err) {
+            document.getElementById('textarea').innerHTML += "Unable to query. Error: " + "\n" + JSON.stringify(err, undefined, 2);
+        } else {
+            document.getElementById('textarea').innerHTML += "Querying for data: " + "\n" + JSON.stringify(data, undefined, 2);
+        }
+    });
+}
+</script>
+</head>
+
+<body>
+<input id="queryData" type="button" value="Query" onclick="queryData();" />
+<br><br>
+<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
+
+</body>
+</html> 

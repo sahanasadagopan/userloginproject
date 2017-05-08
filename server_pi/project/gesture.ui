@@ -16,11 +16,14 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>39</x>
-     <y>39</y>
-     <width>211</width>
-     <height>141</height>
+     <x>20</x>
+     <y>20</y>
+     <width>331</width>
+     <height>241</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
    </property>
    <property name="title">
     <string>Gesture sensor</string>
@@ -29,10 +32,13 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>40</y>
       <width>61</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="text">
      <string>gesture</string>
@@ -50,6 +56,47 @@
     <property name="text">
      <string>Detection:Negative</string>
     </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Gesture Type</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>120</y>
+      <width>85</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Touch</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Left Swipe</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Right Swipe</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>
