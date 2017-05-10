@@ -15,7 +15,7 @@ class DecimalEncoder(json.JSONEncoder):
                 return int(o)
         return super(DecimalEncoder, self).default(o)
 
-dynamodb = boto3.resource('dynamodb',aws_access_key_id='AKIAI7F4R3OPDJQSDT7A',aws_secret_access_key='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',region_name='us-west-2')
+dynamodb = boto3.resource('dynamodb',aws_access_key_id='',aws_secret_access_key='',region_name='us-west-2')
 
 table = dynamodb.Table('mytable')
 
